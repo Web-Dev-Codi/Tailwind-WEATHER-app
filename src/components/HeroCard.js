@@ -1,8 +1,12 @@
 import React from 'react'
 import Clock from 'react-live-clock';
+import WeatherFeatching from './WeatherFetching';
+
+
 
 
 function HeroCard() {
+
   const timeLoader = (d) => {
     let months = [
       "January",

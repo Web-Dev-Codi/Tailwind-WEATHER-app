@@ -1,12 +1,10 @@
-import axios from "axios"
-import { useEffect, useState } from 'react'
-import WeatherList from "./WeatherList";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 
 
 
-
-function WeatherFetch() {
+export function WeatherFeatching() {
   const [data, setData] = useState([]);
   const [city, setCity] = useState('berlin');
   const [location, setLocation] = useState(city);
@@ -23,7 +21,7 @@ function WeatherFetch() {
 
   }
 
-  // const handleChange = e => setCity(e.target.value)
+  const handleChange = e => setCity(e.target.value)
 
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&${metric}`)
@@ -39,19 +37,9 @@ function WeatherFetch() {
   }, [location]);
 
   return (
-    <div className="flex justify-center container ">
-      <div className="mx-auto">
-        <form >
-          <label className="">Enter Location</label>
-          <input type="text" className="mr-1" name="location" onChange={e => setCity(e.target.value)} />
-          <button type="submit" className="btn btn-xs sm:btn-sm mb-3" onClick={handleClick}>Load</button>
-        </form>
-        {pending && <WeatherList data={data} />}
-
-      </div>
-    </div >
+    <WeatherFeatching value={{ data, pending, handleClick, handleChange }} />
   )
-
 }
 
-export default WeatherFetch
+
+export default WeatherFeatching;
