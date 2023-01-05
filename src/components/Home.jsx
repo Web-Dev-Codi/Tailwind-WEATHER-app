@@ -5,7 +5,7 @@ import GlobalWeather from './GlobalWeather'
 function Home() {
   return (
     <div className="">
-      <div className="flex justify-center min-h-screen min-w-full">
+      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row">
         <LocalWeather />
         <GlobalWeather />
       </div>

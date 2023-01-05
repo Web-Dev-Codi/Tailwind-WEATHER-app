@@ -32,26 +32,23 @@ function GlobalWeather() {
   }, [location]);
 
   return (
-    <div className="container  flex flex-col w-2/3" style={{ backgroundImage: `url(/images/background1.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <div className="container" style={{ backgroundImage: `url(/images/cloudy.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
       {data.map((data, index) =>
-        <div key={index} className="flex flex-col">
+        <div key={index} className="">
           <div className="flex flex-col-reverse">
-            <div className="flex flex-row self-center mt-2 mb-4">
-              <div className="mr-2 ">
-                <input type="text" placeholder="Enter City" className="btn w-full max-w-xs placeholder:italic  placeholder:text-slate-400" onChange={handleChange} />
+            <div className="flex flex-row self-center p-2">
+              <div className="">
+                <input type="text" placeholder="Enter City" className="input btn-sm w-full  placeholder:italic  placeholder:text-slate-400" onChange={handleChange} />
               </div>
-              <input type="submit" value="Submit" className="btn" onClick={handleClick} />
+              <input type="submit" value="Submit" className="btn btn-sm" onClick={handleClick} />
             </div>
-
-            <div className="self-center text-5xl font-bold mb-10">{data.weather[0].main}</div>
-
-            <div className="self-center items-center mt-16 mb-14">
-              <div>
-                {" "}
+            <div className="self-center text-4xl md:text-3xl lg:text-5xl xl:text-5xl font-bold mb-2">{data.weather[0].main}</div>
+            <div className="self-center">
+              <div className="">
                 {(() => {
                   const defaults = {
                     color: "white",
-                    size: 240,
+                    size: 160,
                     animate: true,
                   };
                   switch (data.weather[0].main) {
@@ -125,20 +122,20 @@ function GlobalWeather() {
               </div>
             </div>
           </div>
-          <div className="mx-auto w-9/12">
+          <div className="flex flex-row justify-center ">
+            <div className="self-center text-1xl md:text-2xl lg:text-3xl">
+              {data.name}, {data.sys.country}
+            </div>
             <div>
-              <div className="flex flex-row items-center justify-center mt-4">
-                <div className="text-2xl">
-                  {data.name}, {data.sys.country}
-                </div>
-                <div>
-                  <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="" />
-                </div>
-              </div>
-              <div className="text-3xl leading-10 border-b-indigo-400">Temperature{" "}  <span className="float-right">{Math.round(data.main.temp)}°c ({data.weather[0].main})</span></div>
-              <div className="text-3xl leading-10 border-b-indigo-400">Humidity <span className="float-right">{data.main.humidity}%</span></div>
-              <div className="text-3xl leading-10 border-b-indigo-400">Visibility  <span className="float-right">{Math.round(data.visibility)} mi </span></div>
-              <div className="text-3xl leading-10 border-b-indigo-400">Wind Speed <span className="float-right">{Math.round(data.wind.speed)} Km/h</span></div>
+              <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="" />
+            </div>
+          </div>
+          <div className="w-11/12 mx-auto" >
+            <div className="sm:text-xl md:text-lg lg:text-2xl lx:text-2xl leading-[1.8rem]">
+              <p>Temp<span className="float-right">{Math.round(data.main.temp)}°c ({data.weather[0].main})</span></p>
+              <p>Humidity<span className="float-right">{data.main.humidity}%</span></p>
+              <p>Visibility<span className="float-right">{Math.round(data.visibility)} mi </span></p>
+              <p>Wind Speed<span className="float-right">{Math.round(data.wind.speed)} Km/h</span></p>
             </div>
           </div>
         </div>
