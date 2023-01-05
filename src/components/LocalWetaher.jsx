@@ -4,8 +4,10 @@ import Clock from 'react-live-clock';
 import ReactAnimatedWeather from "react-animated-weather";
 
 
+
 function LocalWetaher() {
   const [data, setData] = useState([]);
+  const [pending, setPending] = useState(true)
 
   const apiKey = "8ff77461b0ae2767ef37007036356fb8";
   const metric = "units=metric";
@@ -69,6 +71,7 @@ function LocalWetaher() {
       .then(res => {
         console.log(res);
         setData([res.data])
+        setPending(false)
 
       })
       .catch((error) => {
@@ -89,7 +92,7 @@ function LocalWetaher() {
 
 
   return (
-    <div className="container text-white " style={{ backgroundImage: `url(/images/city.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <div className="container text-white " style={{ backgroundImage: `url(/images/city.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
       {data.map((data, index) =>
         <div className="" key={index}>
           <div className="text-end mr-2 mt-2">
@@ -192,12 +195,20 @@ function LocalWetaher() {
               </div>
             </div>
           </div>
-
         </div>
-      )}
-
-
-    </div>
+      )
+      }
+      {pending && <div className="flex flex-col" >
+        <img src={"/images/loading-gif.gif"} alt="loading..." className="w-48 self-center mt-20" />
+        <h3 className="text-center">
+          Detecting Live Location
+        </h3>
+        <h3 className="text-center">
+          User current location wil be displayed<br></br> & used
+          for calculating Real time weather.
+        </h3>
+      </div>}
+    </div >
   )
 }
 

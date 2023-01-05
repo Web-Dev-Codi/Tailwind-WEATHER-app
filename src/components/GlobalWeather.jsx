@@ -38,7 +38,7 @@ function GlobalWeather() {
           <div className="flex flex-col-reverse">
             <div className="flex flex-row self-center p-2">
               <div className="">
-                <input type="text" placeholder="Enter City" className="input btn-sm w-full  placeholder:italic  placeholder:text-slate-400" onChange={handleChange} />
+                <input type="text" placeholder="Enter City" className="input btn-sm w-full  placeholder:italic " onChange={handleChange} />
               </div>
               <input type="submit" value="Submit" className="btn btn-sm" onClick={handleClick} />
             </div>
