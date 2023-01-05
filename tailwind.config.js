@@ -6,13 +6,15 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        // Simple 16 column grid
         'footer': 'repeat(12,1fr)',
       },
       gridTemplateRows: {
         'footer': 'repeat(7, 40px)',
       }
     },
+  },
+  daisyui: {
+    themes: false,
   },
   plugins: [require("daisyui")],
 }
