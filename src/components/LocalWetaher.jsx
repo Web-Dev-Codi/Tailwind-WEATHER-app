@@ -89,7 +89,7 @@ function LocalWetaher() {
 
 
   return (
-    <div className="container" style={{ backgroundImage: `url(/images/background.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <div className="container text-white" style={{ backgroundImage: `url(/images/background.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
       {data.map((data, index) =>
         <div className="" key={index}>
           <div className="text-end mr-2 mt-2">

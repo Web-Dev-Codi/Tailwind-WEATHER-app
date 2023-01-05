@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className='flex flex-col justify-between h-screen'>
+    <div className=''>
       <main className='container mx-auto'>
         <Home />
       </main>
