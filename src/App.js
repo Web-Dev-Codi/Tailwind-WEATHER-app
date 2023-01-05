@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './components/Home';
-import Nav from './components/NavBar'
+import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
 
@@ -8,10 +8,12 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className=''>
+    <div className="flex flex-col justify-between h-screen">
+      <NavBar />
       <main className='container mx-auto'>
         <Home />
       </main>
+      <Footer />
     </div >
 
   );

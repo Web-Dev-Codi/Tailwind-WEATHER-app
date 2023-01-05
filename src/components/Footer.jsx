@@ -3,7 +3,7 @@ function Footer() {
 
 
   return (
-    <footer className='footer p-10 bg-primary text-primary-content footer-center'>
+    <footer className='footer p-10 bg-black text-white footer-center'>
       <div>
         <svg
           width='50'

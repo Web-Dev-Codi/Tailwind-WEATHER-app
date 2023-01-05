@@ -2,11 +2,13 @@ import React from 'react'
 
 function NavBar() {
   return (
-    <div className="navbar bg-primary">
-      <div className="flex-1">
-        <p className="btn btn-ghost normal-case text-xl">Local Weather</p>
+    <div className="navbar bg-black">
+      <div className="navbar-start">
       </div>
-      <div className="flex-none gap-2">
+      <div className="navbar-center">
+        <p>Local Weather</p>
+      </div>
+      <div className="navbar-end">
       </div>
     </div>
   )
