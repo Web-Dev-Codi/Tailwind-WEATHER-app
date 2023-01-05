@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'white': '#e8e6e3',
+      },
       gridTemplateColumns: {
         'footer': 'repeat(12,1fr)',
       },

@@ -32,7 +32,7 @@ function GlobalWeather() {
   }, [location]);
 
   return (
-    <div className="container" style={{ backgroundImage: `url(/images/glow.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <div className="container text-white " style={{ backgroundImage: `url(/images/glow.jpg)`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
       {data.map((data, index) =>
         <div key={index} className="">
           <div className="flex flex-col-reverse">

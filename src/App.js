@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="flex flex-col justify-between h-screen">
       <NavBar />
-      <main className='container mx-auto'>
+      <main className='container mx-auto text-white'>
         <Home />
       </main>
       <Footer />
